@@ -1,0 +1,64 @@
+<meta charset = "UTF-8"> 
+
+<script>
+
+function pulaLinha() {
+    document.write('<br>');
+    document.write('<br>');
+}
+   
+
+function exibirFrase(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+var quantidadedeEntradas = parseInt(prompt("Qual a aquantidade de familiares"));
+var idade1 = parseInt(prompt("Insira a idade do primeiro membro da família."));
+var idade2 = parseInt(prompt("Insira a Idade do segundo membro da família"));
+var idade3 = parseInt(prompt("insira a Idade do terceiro membro da família"));
+
+
+
+
+function calculoMedia(numero1, numero2, numero3) {
+
+    var mediaIdades = Math.round((idade1 + idade2 + idade3)/quantidadedeEntradas);
+    exibirFrase(`A média das idades é ${mediaIdades}`);
+
+}calculoMedia();
+
+
+// ou pode ser feito dessa forma:
+
+//  var quantidadedeEntradas = parseInt(prompt("Qual a aquantidade de familiares"));
+// var idade1 = parseInt(prompt("Insira a idade do primeiro membro da família."));
+// var idade2 = parseInt(prompt("Insira a Idade do segundo membro da família"));
+// var idade3 = parseInt(prompt("insira a Idade do terceiro membro da família"));
+
+// var totalFamiliares = parseInt(prompt("Insira a quantiade de familiares"));
+// var numero = 1;
+// while (numero <= totalFamiliares) {
+//      var idade = parseInt(prompt("Informa a idade do familiar")); 
+//      numero++;   
+//  }
+//
+//  function calculoMedia(numero1, numero2, numero3) {
+//
+//   var mediaIdades = Math.round((idade1 + idade2 + idade3)/totalFamiliares);
+//    exibirFrase(`A média das idades é ${mediaIdades}`);
+//
+// }calculoMedia();
+//
+
+
+// para fazer o contador de chutes/tentativas, usa-se o while. Primeiro delcare a variável de tentativas de quanto ela vale, depois emprega o bloco de while e o contador. Por exemplo:
+// var contador = 1;
+// var entradaUsuario = parseInt(prompt("Limite de entradas"));
+//  while(contador <= entradaUsuario) {
+//   código a ser executado.
+//  } contador++;
+
+// se colocar a instrução break; após um loop de repetição (While ou for) ele vai sair imediatamente do loop, mas podemos criar uma condição para fazer com que ele saia do bloco de repetição caso algo aconteça, impregando if e else.
+
+</script>

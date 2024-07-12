@@ -1,0 +1,20 @@
+<meta charset = "UTF-8">
+
+
+<script>
+var vitorias = parseInt(prompt('Entre com o número de vitórias do seu time.'));
+var empates = parseInt(prompt('Entre com o número de empates do seu time'));
+var somatoriaPontos = (vitorias * 3) + empates;
+
+console.log(`os pontos do seu time é ${somatoriaPontos}`);
+
+if (somatoriaPontos > 28) {
+    console.log('Seu time está melhor que o ano passado');
+} else if (somatoriaPontos < 28) {
+    console.log('Seu time está pior que o ano passado');
+} if (somatoriaPontos == 28) {
+    console.log('Seu time está igual ao ano passado.')
+}
+
+
+</script>

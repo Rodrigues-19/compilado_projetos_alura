@@ -1,0 +1,61 @@
+<meta charset = "UTF-8"> 
+
+<script>
+
+function pulaLinha() {
+    document.write('<br>');
+    document.write('<br>');
+}
+   
+
+function exibirFrase(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+function calculaImc (peso, altura) { // A função recebe dois parâmetros. O que significa que precisamos dizer para o código oque esses dosi parâmetros valem, por isso o prompt na hora de chamar a função
+
+    var imc = Math.round(peso / (altura*altura));
+  exibirFrase(`O IMC calculado é ${imc}`);  
+
+  if (imc < 18.5) {
+    exibirFrase("Atenção você está em estado de subnutrição");
+  } else if( imc >= 18.5 && imc <= 35 ) {
+    
+        exibirFrase("Imc ideal, mantenha-se assim!");
+    }
+
+    if(imc > 35) {
+    exibirFrase("Detectado grau de obesidade, conçulte um médico!");
+  }
+
+  } 
+
+
+calculaImc(prompt('Insira seu peso'),prompt('Insira sua altura')); // Aqui a chamada da função "calculaImc()" porém dentro dos parâmetros estamos passando os valores que estes devem assumir
+
+
+// operadores lógicos do JavaScript: && (and), || (or), ! (not), != (diferente). 
+
+
+
+// outro jeito de fazer essa função:
+
+// function caclulaImc(peso, altura) {
+//    return peso / (altura * altura);
+//
+//  }
+// var pesoInformado = prompt('Informe seu peso');
+// var alturaInformada = prompt ('infome sua altura');
+// var imc = calculaImc(alturaInformada, pesoInformado);
+// document.wrtite(`O IMC calculado é de ${imc}`);
+
+
+// Calculando pontos do time de Basquete:
+
+
+
+
+
+
+</script>

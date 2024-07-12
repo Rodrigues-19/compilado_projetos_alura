@@ -1,0 +1,38 @@
+<meta charset = "UTF-8">
+
+<input/>  
+<button>Verificação de chute</button>
+
+<script>
+// o comando input gera uma caixa no html que se pode inserir um valor.
+// o comando button cria um botão clicável no html.
+
+var numerosorteado = Math.round(Math.random()*10);
+var input = document.querySelector("input"); // capta do html a entrada que o usuário colocar no campo input criado no Html.
+var contador = 1;
+input.focus();
+
+function VerificaChute() {
+    if(input.value == numerosorteado) { // input.value captura o valor atribuido no campo input pelo usuário. Que fosse um número ou uma string, o objetivo é guardar o valor de entrada.
+        var concordancia = contador > 1 ? "chutes" : "chute"
+        var mensagemChutes = `Você descobriu o número com ${contador} ${concordancia}!`;
+        alert(`Você acertou! ${mensagemChutes}`); 
+    } else if (input.value < numerosorteado) {
+        alert("Você errou, tente novamente. O número sorteado é maior");
+    } if (input.value > numerosorteado) {
+        alert("Você errou, o número é menor");
+    } contador++;
+    input.focus(); // essa funcionalidade permite que o usuário não tenha que voltar a clicar na caiinha para digitar um número, o programa ja entende que outro valor deve ser digitado e apenas pede uma entrada do usuários.
+    limparCampo();
+} 
+
+var button = document.querySelector("button");
+
+button.onclick = VerificaChute; // Aqui há uma associação da função VerificaChute com  o botão, de forma que quando o botão é clicado, a função é executada.
+
+function limparCampo() {
+    input.value = document.querySelector('input');
+    input.value = '';
+}
+
+</script>

@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+    function sorteia() {
+
+       return Math.round(Math.random() * 10);
+
+    }
+
+    function gerarNumeroAleatorio(quantidade) {
+
+        var segredos = []; // a array inicia vazia.
+
+        var numero = 1; // cria-se uma variável apenas para controle dos loops for e while que estão a seguir:
+
+        while(numero <= quantidade) {
+
+              var numeroAleatorio = sorteia(); // a variável numeroAleatorio guarda os valores randômicos gerados pela função sorteia.
+              var achou = false; // Aqui estabelecemos uma relação de uma variável achou que recebe false para controle a seguir:
+
+              if (numeroAleatorio !== 0) { // Se o numero aleatório que estiver guardado dentro da variável numeroAleatório for diferente de 0, executa o código abaixo: 
+                     for(var posicao = 0; posicao < segredos.length; posicao++) { // Uso do loop for, mas poderia também ser o while. Para verificarmos denttro do array se um valor específico é o que queremos, é um teste!
+
+                           if(segredos[posicao] == numeroAleatorio){ // O teste em si! Verifica se na array segredos, na posicao tal é igual a numeroAleatório. Se sim, a variável achou se torna true e o código é interrompido com break.
+                                achou = true;
+                                break;
+                           }
+
+                     }
+
+                     if (achou == false) { // Se achou for false, joga o numero aleatório gerado para dentro da array e incrementa a variável número para que "gaste" as quantidades e o código saiba quantos números ele ainda tem que gerar.
+                           segredos.push(numeroAleatorio);
+                           numero++;
+                     }
+              }
+
+        }
+
+        return segredos; // guarda os elementos dentro da array segredos.
+
+    }
+
+    var segredos = gerarNumeroAleatorio(3); // o array segredos que inicia vazio, passará a guardar o que a função gerarNumeroAleatorio(3) fará. Que no caso será gerarr um número aleatório, verificar se ele já está dentro da array, se não ele coloca dentro, se estiver, ele interrompe a aplicação e gera outro número, testa e se não tiver ja no array ele inclui. O processo irá se repetir até que a variável numero seja igual ao argumento 3 passado dentro dos parâmentros na chamada da função e assim a função terá gerado e guardado dentro da array 3 números.
+
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica() {
+
+       var achou = false;
+
+       for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+              if(input.value == segredos[posicao]) {
+
+                     alert("Você ACERTOU!");
+                     achou = true;
+                     break;
+              } 
+       }
+
+       if(achou == false) {
+
+              alert("Você ERROU!");
+       }
+
+       input.value = "";
+       input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>
