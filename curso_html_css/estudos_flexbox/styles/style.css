@@ -1,0 +1,101 @@
+
+/*                          Prorpiedade Flex-direction - Dita qual vai ser o eixo principal e qual vai ser o perpendicular.
+ o "display: flex;" deixa os elementos em linha, como se trocasse o eixo principal (vertical) pelo perpendicular (horizontal). - Deixa os elementos na horizontal - Usada para identificar que a tag vai ser o container de flexbox. */
+/* "flex-direction" define qual o eixo principal, se é o vertical ou horizontal. (por mais que o flex ja deixe na horizonta, o flex-direction define a direção).
+"flex-direction: row;" - Deixa os elementos dispostos em linha, na horizontal.
+"flex-drection: row-reverse;" - Deixa os elementos em linha, mas inverte a ordem deles, o último elemento passa a ser o primeiro. Age como um espelho
+"flex-drection: column;" - deixa todos os elementos em forma de coluna, um embaixo do outo
+"flex-drection: column-reverse;"  - Deixa os elementos em coluna, assim como o column, porém age como um espelho também,faznedo o último elemento virar o primeiro.
+"flex-wrap: nowrap;" - Deixa todos os elementos dentro do flexbox em uma única linha. (prejudica a forma definid ados elementos, porque tenta juntar todos em uma única linha, como se os expremesse para caberem.
+"flex-wrap: wrap;" - Permite que desca uma linha e diponha os elementos, caso eles ja não caibam mais em uma única linha (permite que não haja prejuízo à forma definida dos elementos 
+"flex-wrap: wrap-reverse;" - Invés de os elementos serem quebrados para baixo, eles são para cima  */
+
+
+/* @Importante: Se não tiver deifinido os limites da tela, conforme escrever algumas das propriedades abaixo, ele vai ficar colado nas bordas da tela. Mas caso tenha um padding definido, ele vai alinhas os elementos conforme o tamanho do padding que os elementos estão inseridos. */
+
+
+/*                          Propriedade Justify-content - Alinha os elementos no eixo principal definido anteriormente.
+"justify-content: flex-start;" - Fazem os elementos colarem do lado esquerdo da tela.
+"justify-content: flex-end;" - Fazem os elementos colarem do lado direito da tla.
+"justify-content: center;" - Faz os elementos ficarem juntos ao centro da tela
+"justify-content: space-between;" - Faz os elementos ficarem com espaços iguais entre eles, de forma que preencham toda a tela. (Se forem 3 elementos, o primeiro ficará colado na margem esquerda, o segundo, ao meio da tela e o terceiro colado na margem direita da tela. 
+"justify-content: space-around;" - Deixa um espaço entre os elementos e envolta dos elementos que estão na ponta, de forma que não colem nas margens definidas. */
+
+
+/*                          Propriedade Align-items - Alinha os elementos no eixo perpendicular ao eixo escolhido como principal no início.
+ "align-itens: flex-start;" - Deixa os elementos ao começo do eixo vertical, ou seja, na parte de cima da tela. 
+ "align-itens: flex-end;" - Alinha os elementos ao final do eixo vertical, ou seja ao final da tela. 
+ "align-itens: center;" - Alinha os elementos ao centro da tela, com distâncias iguais entre o centro e o topo e o contro e o fundo da tela.
+ "align-itens: stretch;" - Caso não tenha definido uma altura para os elementos, essa propriedade faz os elementos ocuparem todo o espaço vertical.
+ "align-itens: baseline;" - Usado quando tem fontes diferentos no projeto e quer que tudo fique na mesma base, na mesma linha, com um tamanho de letra maior que o outro */
+
+ /*    Propriedade align-content  - Alinha elementos em mais de uma linha caso esteja utilizando o flex-wrap e tenham muitos elementos, sendo que é necessario uma quebra. Funciona d  a mesma forma que o Align-items, ou seja, alinha os elementos no eixo perpendicular ao eixo escolhido como eixo principal. ( Caso o eixo principal seja o da horizontal, ou seja, o "flex-direction" seja row, o eixo perpendicular passa a ser o eixo horizontal).
+ "align-content: flex-start; - Deixa os elementos ao começo do eixo vertical, ou seja, na parte de cima da tela.
+ "align-itens: flex-end;" - Alinha os elementos ao final do eixo vertical, ou seja ao final da tela. 
+ "align-itens: center;" - Alinha os elementos ao centro da tela, com distâncias iguais entre o centro e o topo e o contro e o fundo da tela. 
+ "align-content: space-between;" - Deixa um espaço igual entre os elementos que estão juntos na linha de cima e de baixo que foram quebrados pela propriedade.
+ "align-content: space-around;" -  Deixa um espaço entre os elementos e envolta dos elementos que estão na ponta, de forma que não colem nas margens definidas.*/
+
+ /* gap: Insere um espaçamento entre os elementos, para todos os lados. Pode ser em px (píxels), rem, Inc (polegadas), cm (centímentros), etc.
+ gap: 70px 30px - 70 píxels de distância entre as linhas e 30 píxels de distância entre as colunas (70px de distância vertical e 30 px de distância horizontal
+ row-gap - Distância especificamente entre as linhas (vertical)
+ column-gap - Distância especificamente entre as colunas (horizontal) */
+
+ /*                 Propriedade order.
+ Por padrão, cada bloco tem "order: 0;" 
+ Dispõe a ordem dos elementos. 
+ 
+ */
+ 
+* {
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    row-gap: 10px;
+    column-gap: 30px;
+  
+    /* indiferente: */
+    background-color: #f9eac3;
+    padding: 16px;
+    height: 500px;
+  }
+  
+  .bloco-1 {
+    /* indiferente: */
+    background-color: #c6d8f0;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 16px;
+  }
+  
+  .bloco-2 {
+    /* indiferente: */
+    background-color: #d8bfd8;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 16px;
+  }
+  
+  .bloco-3 {
+    /* indiferente: */
+    background-color: #ff9999;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 16px;
+  }
